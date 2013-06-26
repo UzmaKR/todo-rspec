@@ -2,6 +2,9 @@ class List
   attr_reader :title, :tasks
 
   def initialize(title, tasks = [])
+    if tasks.class != Array 
+      raise TypeError, "Tasks has to be an array of tasks!"
+    end
     @title = title
     @tasks = tasks
   end
